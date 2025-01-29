@@ -1,0 +1,281 @@
+
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0; 
+  color: #333; 
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+body.dark {
+  background-color: #1e1e1e; 
+  color: #eaeaea; 
+}
+
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #333; 
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+
+header h1 {
+  font-size: 2.5rem;
+  position: relative;
+  display: inline-block;
+  color: #f3f2f2; 
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.02));
+  backdrop-filter: blur(5px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+header h1:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); 
+}
+
+
+header h1::after {
+  content: ""; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #333; 
+  z-index: 1;
+  animation: typing 4s steps(30, end) 1 forwards,
+    blink-cursor 0.7s steps(2) infinite;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+header h1:hover::after {
+  animation: typing 4s steps(30, end) 1 forwards,
+    blink-cursor 0.7s steps(2) infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-cursor {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+}
+
+header .theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+}
+
+header.dark {
+  background-color: #111; /
+}
+
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #e0e0e0;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 400px;
+  transition: background-color 0.3s ease;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  margin-left: 0.5rem;
+  width: 100%;
+  background: none;
+  color: #333;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark .search-bar {
+  background-color: #444; 
+}
+
+body.dark .search-bar input {
+  background-color: #333;
+  color: #eaeaea;
+}
+
+.note-form {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 2rem 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark .note-form {
+  background-color: #333;
+  color: #eaeaea;
+}
+
+.note-form input,
+.note-form textarea {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  color: #333;
+  background-color: #ffffff;
+  transition: background-color 0.3s ease, border-color 0.3s ease,
+    color 0.3s ease;
+}
+
+body.dark .note-form input,
+body.dark .note-form textarea {
+  background-color: #444;
+  border-color: #555;
+  color: white;
+}
+
+.note-form button {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.note-form button:hover {
+  background-color: #555;
+}
+
+
+.note-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 2rem 0;
+  transition: gap 0.3s ease;
+}
+
+.note-item {
+  flex: 1 1 calc(33.333% - 1rem);
+  background-color: white;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.note-item:hover {
+  transform: scale(1.02);
+}
+
+body.dark .note-item {
+  background-color: #333;
+  color: white;
+}
+
+
+.note-actions {
+  display: flex;
+  justify-content: space-between;
+  transition: color 0.3s ease;
+}
+
+.note-actions button {
+  background: none;
+  border: none;
+  color: #777;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.note-actions button:hover {
+  color: #333;
+}
+
+body.dark .note-actions button {
+  color: #aaa;
+}
+
+body.dark .note-actions button:hover {
+  color: white;
+}
+
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+body {
+  animation: slideIn 0.5s ease-in-out;
+}
+
+
+@media screen and (max-width: 768px) {
+  .note-list {
+    flex-direction: column;
+  }
+
+  .note-item {
+    flex: 1 1 100%;
+  }
+
+  .search-bar {
+    max-width: 100%;
+  }
+}
