@@ -1,5 +1,5 @@
 import React from "react";
-import { showFormattedDate } from "../utils/helper";
+import { showFormattedDate } from "../utils/index";
 import { FiArchive, FiTrash, FiInbox } from "react-icons/fi";
 
 const NoteItem = ({ note, onDelete, onToggleArchive }) => {

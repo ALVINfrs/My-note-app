@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getInitialData } from "./utils/data";
+import { getInitialData } from "./utils/index";
 import NoteList from "./components/NoteList";
 import NoteForm from "./components/NoteForm";
 import SearchBar from "./components/SearchBar";
